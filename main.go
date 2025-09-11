@@ -98,10 +98,7 @@ func main() {
 		var measurement string
 		switch s[1] {
 		case "1":
-			if s[3] == "0004a30b001e0b53" || s[3] == "0004a30b01000200" || s[3] == "0004a30b0028ddd9" {
-				measurement = "SoilMoisture3DepthLevels"
-				goTopic = true
-			} else if s[3] == "0004a30b001a1d6f" {
+			if s[3] == "0004a30b001a1d6f" {
 				measurement = "VibrationAverage"
 				goTopic = true
 			} else if s[3] == "0004a30b0023580e" {
@@ -132,6 +129,9 @@ func main() {
 			goTopic = true
 		case "20":
 			measurement = "Hydrometer"
+			goTopic = true
+		case "22":
+			measurement = "SoilMoisture3DepthLevels"
 			goTopic = true
 		}
 		deviceId := s[3]
